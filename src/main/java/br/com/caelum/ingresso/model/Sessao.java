@@ -7,8 +7,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
-import org.hibernate.validator.constraints.NotEmpty;
-
 @Entity
 public class Sessao {
 	
@@ -16,7 +14,6 @@ public class Sessao {
 	@GeneratedValue
 	private Integer id;
 	
-	@NotEmpty
 	private LocalTime horario;
 	
 	@ManyToOne
