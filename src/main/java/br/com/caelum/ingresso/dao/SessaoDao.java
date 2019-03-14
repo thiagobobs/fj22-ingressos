@@ -21,6 +21,10 @@ public class SessaoDao {
 		entityManager.merge(sessao);
 	}
 	
+	public Sessao findOne(Integer id) {
+		return entityManager.find(Sessao.class, id);
+	}
+	
 	public List<Sessao> buscaSessoesDaSala(Sala sala) {
 		return entityManager.createQuery("select s from Sessao s where s.sala = :sala", Sessao.class)
 				.setParameter("sala", sala)
