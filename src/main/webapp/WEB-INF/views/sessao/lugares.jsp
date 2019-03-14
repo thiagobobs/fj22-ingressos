@@ -30,6 +30,9 @@
 			<h2>Lugares</h2>
 			<table class="table-compra" id="lugares">
 				<tbody>
+					<tr class="telao">
+						<td id="tela">Tela</td>
+					</tr>
 					<c:forEach var="map" items="${sessao.mapaDeLugares}">
 						<tr class="fileira">
 							<td class="fileira-valor">${map.key}</td>
@@ -38,7 +41,8 @@
 								<tr>
 								<c:forEach var="lugar" items="${map.value}">
 									<td class="fileira-assento"><figure>
-										<svg class="assento disponivel" id="${lugar.id}"  version="1.0" id="SEAT" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+										<svg class="assento ${sessao.isDisponivel(lugar) ? 'disponivel' : 'ocupado'}" onclick="${sessao.isDisponivel(lugar) ? 'changeCheckbox(this)' : ''}"
+												id="${lugar.id}"  version="1.0" id="SEAT" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 												 viewBox="0 0 318.224 305.246" enable-background="new 0 0 318.224 305.246" xml:space="preserve">
 											<g id="FILL">
 												<path d="M269.395,132.246h-15.02V51.414c0-11.758-9.492-21.248-21.248-21.248H85.097
@@ -72,9 +76,6 @@
 							<td>
 						</tr>
 					</c:forEach>
-					<tr class="telao">
-						<td id="tela">Tela</td>
-					</tr>
 					<tr class="legenda legenda-menu">
 						<td>Legenda</td>
 					</tr>
