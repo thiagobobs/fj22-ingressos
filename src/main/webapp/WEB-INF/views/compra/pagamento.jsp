@@ -23,13 +23,13 @@
 
                     <input type="hidden" name="ingressos[${status.index}].sessao.id" value="${ingresso.sessao.id}">
                     <input type="hidden" name="ingressos[${status.index}].lugar.id" value="${ingresso.lugar.id}">
-                    <input type="hidden" name="ingressos[${status.index}].tipoDeIngresso" value="${ingresso.tipoDeIngresso}">
+                    <input type="hidden" name="ingressos[${status.index}].tipoIngresso" value="${ingresso.tipoIngresso}">
                     <tr>
                         <td>${ingresso.sessao.sala.nome}</td>
                         <td>${ingresso.lugar.fileira}${ingresso.lugar.posicao}</td>
                         <td>${ingresso.sessao.filme.nome }</td>
                         <td>${ingresso.sessao.horario}</td>
-                        <td>${ingresso.tipoDeIngresso.descricao}</td>
+                        <td>${ingresso.tipoIngresso.descricao}</td>
                         <td>${ingresso.preco}</td>
                     </tr>
                 </c:forEach>
@@ -64,8 +64,8 @@
 
             <div class="form-group">
                 <div class="col-md-8">
-                    <label for="cartaoDeCredito">Cartão de Crédito:</label>
-                    <input id="cartaoDeCredito" type="text" name="cartaoDeCredito" class="form-control">
+                    <label for="numero">Cartão de Crédito:</label>
+                    <input id="numero" type="text" name="numero" class="form-control">
                 </div>
 
                 <div class="col-md-4">
@@ -73,7 +73,12 @@
                     <input id="cvv" type="text" name="cvv" class="form-control">
                 </div>
             </div>
-
+			<div class="form-group">
+				<div class="col-md-6">
+					<label for="vencimento">Vencimento:</label>
+					<input id="vencimento" type="text" name="vencimento" class="form-control">
+				</div>˜
+			</div>
 
             <div class="form-group">
                 <div class="col-md-12">
