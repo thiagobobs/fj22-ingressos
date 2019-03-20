@@ -22,7 +22,7 @@ public class Sala {
     private String nome;
 
     @OneToMany(fetch = FetchType.EAGER)
-    private List<Lugar> lugares = new ArrayList<>();
+    private Set<Lugar> lugares = new LinkedHashSet<>();
     
     private BigDecimal preco;
 
@@ -59,15 +59,15 @@ public class Sala {
         this.lugares.add(lugar);
     }
 
-    public List<Lugar> getLugares() {
-        return lugares;
-    }
+    public Set<Lugar> getLugares() {
+		return lugares;
+	}
 
-    public void setLugares(List<Lugar> lugares) {
-        this.lugares = lugares;
-    }
+	public void setLugares(Set<Lugar> lugares) {
+		this.lugares = lugares;
+	}
 
-    public BigDecimal getPreco() {
+	public BigDecimal getPreco() {
 		return preco;
 	}
 
